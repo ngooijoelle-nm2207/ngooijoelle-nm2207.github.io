@@ -1,0 +1,18 @@
+html, body {
+	height:100%;
+	width:100%;
+  background-color: rgb(233, 196, 117);
+}
+
+.sidebar {
+    text-align: center; /* assign3: center titles*/
+}
+
+#range-wrap {
+  position: relative;
+}
+
+input[type=range] {
+  width: 400px;
+}
+
