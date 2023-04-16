@@ -1,82 +1,499 @@
 <!DOCTYPE html>
-<meta charset="UTF-8">
-
 <html>
-    <head>
-        <link rel="stylesheet" type="text/css" href="css/appstyle.css">
-        <title>flexbox layout</title>
-        <script defer type="text/javascript" src="appscripts/main.js">
-        </script>
-    </head>
 
-  <body>
-    
-    <div class="container">
-      <header class="header">
-        <p>Hello! I am Ngooi Joelle e0773950, and this is my Github project page for NM2207!</p>
-      </header>
+<head>
+<!-- created css from scratch -->
+    <link rel="stylesheet" type="text/css" href="css/appstyle.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script defer type="text/javascript" src="index.js"></script>
+</head>
 
-      <nav class="sidebar">
-      <h3>Diary entries</h3>
-      <p><a href="https://docs.google.com/document/d/10AmYiZh9o-noYnqIFXPS7CI3VFz_BSqHSaKjdli1P2w/edit?usp=sharing">Week 9 diary entry</a></p>
-      <p><a href="https://docs.google.com/document/d/1JEGaOoI52zRfmqZEjS_o7K0s_yZI0snqIRFsCdGKFfc/edit?usp=sharing">Week 10 diary entry</a></p>
-      <p><a href="https://docs.google.com/document/d/1AUuOWH70uWQBxKGYE2KwUPucQXLK-_Lbr9gcSnUUJ38/edit?usp=sharing">Week 11 diary entry</a></p>
-      <p><a href="https://docs.google.com/document/d/1OLf1zpOmDfUXpUlDdmMtIk_F39uLLErriIcWlp7xPpQ/edit">Week 12 diary entry</a>
-      </nav>
-
-      <article class="content">
-        <h2>Storyboard</h2>
-<table>
-  <tr>
-    <td><b>Background</b></td>
-    <td>My topic is on the happiness of countries worldwide, with a focus on the factors affecting one’s life fulfillment (such as married vs single, quality of healthcare systems, biological influences) and this is derived by comparing the demographics of people within countries that are happier. We will also be looking at other interesting findings regarding happiness, such as the change in happiness levels over the years (indicating global events).
-        My rationale for choosing this topic is because we all define life fulfillment and happiness differently, so I am interested in finding out what causes some people to feel happier than others. It is a philosophical question of “what makes life meaningful” that all of us are striving to know so that we can achieve our happiest state.
-      </td>
-  </tr>
-  <tr>
-    <td><b>Data</b></td>
-    <td>I will be using a factor-based data story.
-      <p>I have pulled data from</p>
-      <a href="https://worldhappiness.report/ed/2022/#appendices-and-data">https://worldhappiness.report/ed/2022/#appendices-and-data</a>
-      to get the ranking of happiness worldwide from 2019–2022 using a barplot→ file: barplot for happiness 2022. I have future plans of getting the data for regional trends of happiness-suporting factors. By getting the ranking of happiness, I can compare it with other factors like GDP per capita, healthcare expenditure, education level etc. to find out the different variables that could have led to the differences in happiness.
-
-      <p>I have also pulled data from
-        <a href="https://databank.worldbank.org/happiness-data/id/1d38fdc3">https://databank.worldbank.org/happiness-data/id/1d38fdc3</a>
-        to create a world map, with strength of legal rights and gdp per capita as variables (I hope to incorporate three more variables such as school enrollment for tertiary(%), healthcare expenditure), so that I can compare the patterns in variables within the same year with the happiness data I get from other data sources.
-      </p>
-
-      <p>I want to also find data on the changes in happiness worldwide/within a region over time, to account for any global issues such as the pandemic that may have impacted happiness levels.</p>
-      <p>I am still looking for data in determining whether getting married actually leads to greater happiness as seen from the study 
-      <a href="https://ifstudies.org/blog/does-getting-married-really-make-you-happier#:~:text=Indeed%2C%20married%20people%20are%20happier,and%2015%25%20for%20people%20who">https://ifstudies.org/blog/does-getting-married-really-make-you-happier#:~:text=Indeed%2C%20married%20people%20are%20happier,and%2015%25%20for%20people%20who</a>
-      , but I have not been able to find raw data on this. I also want to expand my research on biological factors on happiness. There was a study on a pair of twins → need raw data 
-      </p>
-      <p><b>Flow of data story:</b>
-        Introduce topic → show the trend and facts and provide data analysis for every data set → go into a more philosophical approach and answer research questions (conclusion)
-        </p>
-    </td>
-  </tr>
-  <tr>
-    <td><b>Problem Statement</b></td>
-    <td>
-      As the world gradually becomes more affluent, more people are reaching the self-actualization stage according to Maslow’s hierarchy of needs, where they start to question what makes life fulfilling and how they can live life to the fullest. With increased awareness about mental health, it is also crucial to learn about factors that affect one’s tendency to feel happier because mental health is just as essential as physical health.
-      <p><b>Research question:</b> What are the factors influencing one to feel more happy/depressed? What makes life meaningful?</p>
-    </td>
-  </tr>
-</table>
-      </article>
-
-      <!-- Ditto the previous note about <aside>. -->
-      <aside class="sidebar">
-      <h3>Final webpage</h3>
-      <p><a href="https://nm2207.org/2223S2/e0773950/web/finalproject/index.html">Data Story</a></p>
+<!-- slider for "how are you feeling today"-->
+<body>
+  <main>
+    <section class="cd-section">
+      <h1>How are you feeling today?</h1>
+      <p>1 being feeling bad and 5 being feeling good</p>
+    <aside class="sidebar aside" id="asideID">
+<!-- submit button with popup function-->
+    <form>
+      <input type="button" id="buttonID" value="Submit" onclick="myFunction()">
+    </form>
+<!-- slider changes text when moved-->
+    <div class="range-wrap"> 
+      <input id="range" type="range" name="range" min="1" max="5" step="1">
+        <label id="display"></label>
+          <p id="numVal"></p> 
+            <div id="range-bars"></div>
+          </div>
       </aside>
+    </section>
 
-      <footer class="footer">
-        <p>footer</p>
-      </footer>
+<!-- static background image -->
+    <section class="cd-section cd-section--bg-fixed">
+<!-- first text box within background image -->
+      <h1 style="margin-top: 80px; font-size:30px; color:firebrick">What causes one to feel more happy?</h1>
+      <p style="font-size:26px; color:firebrick">A data story about happiness</p>
+        <div class="box1">
+          <p style= "font-size:18px;">My data story centers around happiness and mental health, by looking at findings of world happiness rankings and delving deeper into Singapore's happiness (factors that affected happiness through analysis of data), and also mental health trends, what is mental health, and the resources and services that one can utilize to seek help.</p>
+        </div>
+<!-- second text box within background image -->
+    <h1 style="margin-top:100px; margin-bottom:0px; font-size:30px; color:firebrick">Why is learning about happiness important?</h1>
+      <div class="box2">
+        <p style= "font-size:18px;">According to <a href="https://greatergood.berkeley.edu/article/item/why_governments_should_care_more_about_happiness">Diener,</a>
+      a professor of psychology at the University of Virginia and the University of Utah, their research suggests that happy people are more effective in achieving valued goals, contribute positively to society by helping others lead high-quality lives, and are not uncaring or selfish.</p>
+        <p style= "font-size:18px;">
+        <a href="https://news.climate.columbia.edu/2015/04/23/why-happiness-is-important/">The Columbia Climate School</a>
+suggests that using data on happiness can inform policy-making and collaborative problem-solving for local and national governments, as well as track the effectiveness of interventions aimed at improving well-being and reducing inequality over time.</p>
+  <p style="font-size:18px;">
+    <a href="Happiness data help to assess, understand an individual's happiness and help individuals make better informed decision making about where to live (world ranking of happiness), lifestyle choices (trade offs between earning more money, having better health, and settling down in marriage) to achieve better life satisfaction.">According to the Journal of Social Change by Walden University,</a>
+    happiness data helps to assess, understand an individual's happiness and help individuals make better informed decision making about where to live (world ranking of happiness), lifestyle choices (trade offs between earning more money, having better health, and settling down in marriage) to achieve better life satisfaction.
+    </p>
+</div>
+</section>
+</main>
+
+<!-- tab buttons, eventlistener -->
+<button class="tablink" onclick="openPage('Ranking', this, 'red')">World Happiness Ranking</button>
+<button class="tablink" onclick="openPage('Singapore', this, 'red')" id="defaultOpen">Singapore's Analysis</button>
+<button class="tablink" onclick="openPage('mentalhealth', this, 'red')">Mental Health</button>
+
+<!-- description of happiness indices -->
+<div id="Ranking" class="tabcontent">
+<!-- container to left + centre align text, text to explain trends in bar chart -->
+  <div class="para-container2">
+    <p>The <b>World Happiness Report</b> released its annual ranking of the happiest countries in the world and for the sixth year in a row Finland has landed in the top spot.</p>
+    <p>The UN Sustainable Development Solutions Network, the organization behind the report, uses six key factors to help rank the more than 150 countries based on their average life evaluations between 2019-2021:</p>
+    <p>(<b>Hover</b> over each key factor to view detailed information!)</p>
+    <p style="font-size:18px; color:firebrick"><b>
+      1. Social support
+<!-- hover over words for more words to appear using <span> -->
+<!-- &quot; to replace quotation marks to prevent breakings -->
+    <span class="extra">Social support is the national average of the binary responses (0=no, 1=yes) to the Gallup World Poll (GWP) question &quot;If you were in trouble, do you have relatives or friends you can count on to help you whenever you need them, or not?&quot;</span></p>
+    </b></p>
+    <p style="font-size:18px; color:firebrick"><b>
+    2. Income
+    <span class="extra2">GDP per capita is in terms of Purchasing Power Parity (PPP) adjusted to constant 2017 international dollars, taken from the World Development Indicators (WDI) released by the World Bank on December 16, 2021. See Statistical Appendix 1 for more details. GDP data for 2021 are not yet available, so we extend the GDP time series from 2020 to 2021 using country-specific forecasts of real GDP growth from the OECD Economic Outlook No. 110 (Edition December 2021) or, if missing, the World Bank&apos;s Global Economic Prospects (Last Updated: 01/11/2022), after adjustment for population growth. The equation uses the natural log of GDP per capita, as this form fits the data significantly better than GDP per capita.</span></p>
+  </b></p>
+    <p style="font-size:18px; color:firebrick"><b>
+      3. Health
+      <span class="extra3">The time series for healthy life expectancy at birth is constructed based on data from the World Health Organization (WHO) Global Health Observatory data repository, with data available for 2000, 2010, 2015, and 2019. Interpolation and extrapolation are used to match this report&apos;s sample period (2005-2021). See Statistical Appendix 1 for more details.</span></p>
+    </b></p>
+    <p style="font-size:18px; color:firebrick"><b>
+      4. Freedom
+      <span class="extra4">Freedom to make life choices is the national average of binary responses (0=no, 1=yes) to the GWP question &quot;Are you satisfied or dissatisfied with your freedom to choose what you do with your life?&quot;</span></p>
+    </b></p>
+    <p style="font-size:18px; color:firebrick"><b>
+      5. Generosity
+      <span class="extra5">Generosity is the residual of regressing the national average of GWP responses to the donation question &quot;Have you donated money to a charity in the past month?&quot; on log GDP per capita.</span></p>
+    </b></p>
+    <p style="font-size:18px; color:firebrick"><b>
+      6. Absence of corruption
+      <span class="extra6">Perceptions of corruption are the average of binary answers to two GWP questions: &quot;Is corruption widespread throughout the government in this country or not?&quot; and &quot;Is corruption widespread within businesses in this country or not?&quot; Where data for government corruption are missing, the perception of business corruption is used as the overall corruption-perception measure.</span></p>
+    </b></p>
+  </div>
+
+<!--bar chart for world happiness ranking-->
+<h1>World Happiness Report 2022</h1>
+    <link rel="stylesheet" type="text/css" href="css/appstyle.css">
+    <script defer type="text/javascript" src="appscripts/main.js"></script>
+<canvas id="sm-bar-chart" width="1000" height="400"></canvas>
+<div style="margin-bottom: 60px;">
+<p>Source: <a href="https://worldhappiness.report/ed/2022/#appendices-and-data">https://worldhappiness.report/ed/2022/#appendices-and-data</a></p>
+</div>
+
+<h1>Which 5 countries were the happiest?</h1>
+<!-- container for the first image gallery -->
+<div class="container">
+
+<!-- full-width images with number and description of country text -->
+  <div class="mySlides">
+    <div class="numbertext">1 / 5</div>
+      <img src="finland.jpeg" style="width:60%">
+      <div class="text-block">
+        <h4>Rank 1: Finland</h4>
+        <p>Finland is a country located in Northern Europe, known for its beautiful landscapes, high quality of life, and unique cultural characteristics.</p>
+        <p>The population of Finland is approximately 5.5 million, and the official languages are Finnish and Swedish.</p>
+        <p>It has a mixed economy with a strong emphasis on technology, innovation, and export-oriented industries, such as telecommunications, electronics, and forest products.</p>
+        <p>Finland is also famous for its design and architecture, with iconic brands such as Marimekko and Iittala gaining international recognition.</p>
+        <p>Popular activities include hiking, skiing, fishing, and enjoying the unique Finnish sauna culture.</p>
+      </div>
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">2 / 5</div>
+      <img src="denmark.jpeg" style="width:60%">
+      <div class="text-block2">
+      <h4>Rank 2: Denmark</h4>
+      <p>Denmark is a country located in Northern Europe and it is the smallest of the Scandinavian countries.</p>
+      <p>The population of Denmark is approximately 5.8 million, and the official language is Danish.</p>
+      <p>The capital and largest city is Copenhagen, which is known for its historic architecture, cultural landmarks, and biking culture.</p>
+      <p>Denmark is also known for its design and architecture, with iconic brands such as LEGO, Bang & Olufsen, and Royal Copenhagen gaining global recognition.</p>
     </div>
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">3 / 5</div>
+      <img src="iceland.jpeg" style="width:60%">
+      <div class="text-block3">
+        <h4>Rank 3: Iceland</h4>
+        <p>Iceland is a Nordic island country located in the North Atlantic Ocean. It is known for its stunning landscapes, including glaciers, volcanoes, geysers, hot springs, waterfalls, and rugged coastlines.</p>
+        <p>The country is sparsely populated, with a small population of around 360,000 people.</p>
+        <p>The country is known for its active volcanoes, including Eyjafjallajökull and Hekla, which have erupted in recent years and shaped the landscape.</p>
+        <p>Icelanders have a strong connection to nature and the environment, and the country has a reputation for being progressive in areas such as renewable energy and environmental conservation.</p>
+        <p>Iceland is a breathtaking destination that offers unique natural beauty, geological wonders, and a rich cultural heritage, making it a popular destination for travelers seeking an otherworldly experience.</p>
+      </div>
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">4 / 5</div>
+      <img src="switzerland.jpeg" style="width:60%">
+      <div class="text-block4">
+        <h4>Rank 4: Switzerland</h4>
+        <p>Switzerland is a landlocked country located in the heart of Europe, known for its stunning alpine landscapes, charming cities, and reputation for political stability and neutrality.</p>
+        <p>The estimated population of Switzerland is around 8.7 million people.</p>
+        <p>It is renowned for its picturesque mountain scenery, including the Swiss Alps, which cover more than half of the country's surface area.</p>
+        <p>In addition to its natural beauty, Switzerland is also renowned for its cities, which are known for their cleanliness, safety, and high quality of life. Zurich, the largest city, is a global financial hub with a vibrant arts and culture scene, while Geneva is known for its international organizations, including the United Nations and the Red Cross.</p>
+        <p>Switzerland has a rich cultural heritage, with influences from its four national languages: German, French, Italian, and Romansh.</p>
+        <p>Switzerland is famous for its precision engineering and high-quality products, such as watches, chocolates, and cheese. Swiss chocolate, including brands like Lindt and Toblerone, is renowned worldwide for its rich and delicious flavors. Swiss cheese, including varieties like Emmental, Gruyère, and Raclette, is also highly regarded for its quality and taste.</p>
+      </div>
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">5 / 5</div>
+      <img src="netherland.jpeg" style="width:60%">
+      <div class="text-block5">
+      <h4>Rank 5: Netherlands</h4>
+      <p>The Netherlands, also known as Holland, is a country located in Western Europe.</p>
+      <p>The estimated population of the Netherlands is around 17.5 million people.</p>
+      <p>It is known for its iconic windmills, tulip fields, picturesque canals, and progressive culture.</p>
+      <p>One of the most distinctive features of the Netherlands is its extensive system of canals, which are found in cities like Amsterdam, Utrecht, and Leiden. These canals are lined with historic buildings and are often traversed by bicycles, which are a popular mode of transportation in the country.</p>
+      <p>The Dutch are known for their liberal and progressive culture, with the Netherlands being one of the first countries in the world to legalize same-sex marriage, decriminalize marijuana, and promote tolerance and diversity. The country has a reputation for being open-minded, environmentally conscious, and socially progressive.</p>
+  </div>
+  </div>
+
+<!-- next and previous buttons for image slideshow, using eventlistener & function -->
+  <a class="prev2" onclick="plusSlides(-1)"><span>&#10094;</span></a>
+  <a class="next2" onclick="plusSlides(1)"><span>&#10095;</span></a>
+
+<!-- image text -->
+  <div class="caption-container">
+    <p id="caption"></p>
+  </div>
+
+<!-- thumbnail images, event listener to change image -->
+  <div class="row">
+    <div class="column">
+      <img class="demo cursor" src="finland.jpeg" style="width:100%" onclick="currentSlide(1)" alt="Rank 1: Finland">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="denmark.jpeg" style="width:100%" onclick="currentSlide(2)" alt="Rank 2: Denmark">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="iceland.jpeg" style="width:100%" onclick="currentSlide(3)" alt="Rank 3: Iceland">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="switzerland.jpeg" style="width:100%" onclick="currentSlide(4)" alt="Rank 4: Switzerland">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="netherland.jpeg" style="width:100%" onclick="currentSlide(5)" alt="Rank 5: Netherlands">
+    </div>
+  </div>
+</div>
+
+<!-- container for second image gallery -->
+<div style="margin-top: 60px;">
+<h1>Which 5 countries were the unhappiest?</h1>
+<div class="container2">
+
+  <!-- full-width images with number text -->
+  <div class="mySlides2">
+    <div class="numbertext2">1 / 5</div>
+      <img src="afghanistan.jpeg" style="width:50%">
+      <div class="text-block6">
+      <h4>Rank 146: Afghanistan</h4>
+      <p>Afghanistan is a landlocked country located in South Asia and Central Asia</p>
+      <p>Geographically, Afghanistan is a mountainous country, with the Hindu Kush mountain range running through much of its territory. The country also has vast deserts, fertile valleys, and rugged landscapes.</p>
+      <p>Dari and Pashto are the official languages, and Islam is the dominant religion, with the majority of the population practicing Sunni Islam.</p>
+      <p>Afghanistan has faced significant challenges, including decades of conflict, political instability, and social issues. The country has experienced periods of war, including the Soviet invasion in the 1980s and subsequent civil wars.</p>
+      <p>In recent years, Afghanistan has undergone significant political changes, including the establishment of a democratic government after the fall of the Taliban regime in 2001. However, the country continues to face ongoing security and development challenges.</p>
+      </div>
+  </div>
+
+  <div class="mySlides2">
+    <div class="numbertext2">2 / 5</div>
+      <img src="lebanon.jpeg" style="width:60%">
+      <div class="text-block7">
+      <h4>Rank 145: Lebanon</h4>
+      <p>Lebanon is a small country located in the Middle East, bordered by Syria to the north and east, and Israel to the south.</p>
+      <p>The population of Lebanon is diverse, with a mix of ethnic and religious groups. The largest religious communities are the Maronite Christians, Sunni and Shia Muslims, and Druze. Arabic is the official language, and French and English are also widely spoken.</p>
+      <p>Lebanon has faced significant challenges throughout its modern history, including periods of political instability, civil wars, and external conflicts. The country has a complex political system based on power-sharing among different religious communities, which can sometimes create tensions and challenges in governance.</p>
+    </div>
+  </div>
+
+  <div class="mySlides2">
+    <div class="numbertext2">3 / 5</div>
+      <img src="zimbabwe.jpeg" style="width:60%">
+      <div class="text-block8">
+        <h4>Rank 144: Zimbabwe</h4>
+        <p>Zimbabwe is a landlocked country located in Southern Africa, bordered by four countries: South Africa to the south, Mozambique to the east and southeast, Botswana to the west and southwest, and Zambia to the northwest.</p>
+        <p>The population of Zimbabwe is diverse, with the majority of the people being of African descent, particularly the Shona and Ndebele ethnic groups. English, Shona, and Sindebele are the official languages, and Christianity is the dominant religion, although there are also significant indigenous religious practices.</p>
+        <p>Agriculture, particularly subsistence farming, is a significant sector of Zimbabwe's economy, with most of the population engaged in farming activities. Mining, particularly of minerals such as gold, platinum, and diamonds, is also an important industry in the country.</p>
+        <p>Zimbabwe has faced significant challenges in recent decades, including periods of economic and political instability. In the 2000s, the country experienced a severe economic crisis marked by hyperinflation and a decline in living standards. However, in recent years, Zimbabwe has made efforts towards economic recovery and political reforms.</p>
+    </div>
+  </div>
+
+  <div class="mySlides2">
+    <div class="numbertext2">4 / 5</div>
+      <img src="rwanda.jpeg" style="width:60%">
+      <div class="text-block9">
+        <h4>Rank 143: Rwanda</h4>
+        <p>Rwanda is a small, landlocked country located in East Africa, bordered by Uganda to the north, Tanzania to the east, Burundi to the south, and the Democratic Republic of the Congo to the west.</p>
+        <p>Rwanda has a diverse geography, with rolling hills, mountains, and a number of lakes. The country is often referred to as the "Land of a Thousand Hills" due to its picturesque landscape.</p>
+        <p>Rwanda has made significant strides in recent years in terms of economic development, education, healthcare, and women's empowerment. The country is often cited as an example of successful post-conflict recovery and reconciliation efforts, with a focus on unity, reconciliation, and development.</p>
+        <p>Rwanda has a complex history, marked by the 1994 genocide against the Tutsi ethnic group, during which an estimated 800,000 people were killed in a span of 100 days. However, since then, Rwanda has made remarkable progress in its recovery efforts and has become known for its resilience, stability, and economic growth.</p>
+    </div>
+  </div>
+
+  <div class="mySlides2">
+    <div class="numbertext2">5 / 5</div>
+      <img src="botswana.jpeg" style="width:60%">
+      <div class="text-block10">
+      <h4>Rank 142: Botswana</h4>
+      <p>Botswana is a landlocked country located in Southern Africa, bordered by Namibia to the west and north, Zimbabwe to the east and northeast, and South Africa to the south and southeast.</p>
+      <p>Botswana has a varied geography that includes the Kalahari Desert, the Okavango Delta, and the Chobe National Park. Botswana also has a number of national parks and game reserves, making it a popular destination for wildlife viewing and safaris.</p>
+      <p>Botswana has a rich cultural heritage, with traditional music, dance, and arts being important expressions of its culture. The country is known for its vibrant traditional dance forms, such as the Setswana dance, which is often performed during cultural events and celebrations.</p>
+      <p>Botswana is a country with a relatively high standard of living compared to many other African nations, with a well-developed education and healthcare system. It has made significant progress in recent years in areas such as infrastructure development, economic diversification, and poverty reduction.</p>
+  </div>
+  </div>
   
+<!-- next and previous buttons for image slideshow, using eventlistener & function -->
+  <a class="prev2" onclick="plusSlides2(-1)"><span>&#10094;</span></a>
+  <a class="next2" onclick="plusSlides2(1)"><span>&#10095;</span></a>
+</div>
 
-  </body>
+
+<!-- image text -->
+<div class="caption-container2">
+  <p id="caption2"></p>
+</div>
+
+<!-- thumbnail images, event listener to change image -->
+<div class="row2">
+  <div class="column2">
+  <img class="demo2 cursor2" src="afghanistan.jpeg" style="width:100%" onclick="currentSlide2(1)" alt="Rank 146: Afghanistan">
+</div>
+<div class="column2">
+  <img class="demo2 cursor2" src="lebanon.jpeg" style="width:100%" onclick="currentSlide2(2)" alt="Rank 145: Lebanon">
+</div>
+<div class="column2">
+  <img class="demo2 cursor2" src="zimbabwe.jpeg" style="width:100%" onclick="currentSlide2(3)" alt="Rank 144: Zimbabwe">
+</div>
+<div class="column2">
+  <img class="demo2 cursor2" src="rwanda.jpeg" style="width:100%" onclick="currentSlide2(4)" alt="Rank 143: Rwanda">
+</div>
+<div class="column2">
+  <img class="demo2 cursor2" src="botswana.jpeg" style="width:100%" onclick="currentSlide2(5)" alt="Rank 142: Botswana">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- tab for singapore's analysis -->
+<div id="Singapore" class="tabcontent">
+  <h1>Singapore based on World Happiness Reports from 2015-2022</h1>
+
+<!-- image of singapore + source link -->
+    <img class="singapore" src="singapore.jpg" style="width:600px">
+    <p style="margin-bottom:60px">Source: <a href="https://unsplash.com/photos/__cBlRzLSTg?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">https://unsplash.com/photos/__cBlRzLSTg?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText</a></p>
+
+<!-- line chart for world happiness ranking of singapore + source link for data -->
+<script src="linechart(singapore)/appscripts/main.js"></script>
+<link rel="stylesheet" type="text/css" href="css/appstyle.css">
+<canvas id="RankingChart" width="1000" height="100"></canvas>
+<p>Source: <a href="https://www.kaggle.com/datasets/mathurinache/world-happiness-report?select=2017.csv">https://www.kaggle.com/datasets/mathurinache/world-happiness-report?select=2017.csv</a></p>
+  
+<!-- container to left + centre align text, text to explain trends in line chart -->
+<div class="para-container">
+        <p>Singapore's world happiness ranking ranges from 22 to 34.</p>
+        <p>
+          Happiness rankings have worsened starting from 2017 to 2019, with
+          lowest ranking in both 2018 and 2019.
+        </p>
+        <p>
+          After 2019, Singapore's ranking improves and was ranked 27 last year.
+        </p>
+      </div>
+  
+<!-- line chart for happiness factors changes over time + source link for datas -->
+      <canvas id="myChart" width="1000" height="250"></canvas>
+<!-- container to left + centre align text, text to explain trends in line chart -->
+      <div class="para-container">
+        <p>
+          Source:<a href="https://www.kaggle.com/datasets/mathurinache/world-happiness-report?select=2017.csv">https://www.kaggle.com/datasets/mathurinache/world-happiness-report?select=2017.csv</a>
+        </p>
+        <p>
+          There weren't much decrease in factors when rankings worsen in 2017 to
+          2019, except for drop in GDP per capita and generosity from 2017 to
+          2018.
+        </p>
+        <p>
+          However, happiness scores dropped to the lowest in 2019, which could
+          have been circumstancial factors not accounted for like COVID-19 as
+          factors did not drop from 2018 to 2019.
+        </p>
+        <p>
+          GDP per capita increased rapidly from 2020 and 2022, which is coupled
+          with a slight increase in happiness score.
+        </p>
+        <p>
+          GDP per capita also dropped slightly along with happiness scores from
+          2017 to 2018.
+        </p>
+        <p>
+          We can therefore hypothesise that GDP per capita affects happiness,
+          while factors like social support or generosity do not.
+        </p>
+      </div>
+    </div>
+
+<!-- tab for mental health -->
+<div id="mentalhealth" class="tabcontent">
+
+<!-- right HTML button to navigate to trends section when pressed, function, eventlistener -->
+<button class="trends" onclick="goToSection2()">Mental Health Trends</button>
+
+<!-- middle HTML button to navigate to discover section when pressed, function, eventlistener -->
+<button class="discover" onclick="goToSection3()">What is Mental Well-being</button>
+
+<!-- left HTML button to navigate to resources section when pressed, function, eventlistener -->
+<button class="resources" onclick="goToSection()">Resources & Services</button>
+
+<!-- HTML section to navigate to (trends)-->
+<section id="section3">
+  <h1>Mental Health Trends</h1>
+
+<!-- line chart for mental health searches in Singapore -->
+<canvas id="myChart2" width="1000" height="400"></canvas>
+<!-- container to left + centre align text -->
+<div class="para-container3">
+<!-- source link for data + text to explain trends in line chart -->
+<p>Source: <a href="https://trends.google.com/trends/explore?date=all&geo=SG&q=mental%20health&hl=en">https://trends.google.com/trends/explore?date=all&geo=SG&q=mental%20health&hl=en</a></p>
+<p>Numbers represent search interest relative to the highest point on the chart for the given region and time. A value of 100 is the peak popularity for the term. A value of 50 means that the term is half as popular. A score of 0 means there was not enough data for this term.</p>
+<p>Over time, there is a general trend of increased awareness and interest in mental health topics, as societal attitudes towards mental health evolve and stigma is reduced.</p>
+<p>This is reflected in a gradual increase in Google Search activity related to mental health in Singapore over time.</p>
+<p>Major events or news related to mental health, such as mental health campaigns, advocacy efforts, or high-profile cases, may result in spikes in search activity.</p>
+<p>For example, during the COVID-19 pandemic, there has been increased interest in mental health topics as people sought information and resources to cope with the challenges of the pandemic.</p>
+<p style="margin-bottom: 60px;">There have been spikes in search activity from 2020 onwards, as the COVID-19 pandemic ensues.</p>
+</div>
+
+<!-- bar chart for suicides in Singapore -->
+<canvas id="sm-bar-chart2" width="1000" height="400"></canvas>
+<div style="margin-bottom: 60px;">
+<!-- source link for data -->
+<p>Source: <a href="https://data.worldbank.org/indicator/SH.STA.SUIC.P5?end=2019&locations=SG&start=2000&view=chart&year=2019">https://data.worldbank.org/indicator/SH.STA.SUIC.P5?end=2019&locations=SG&start=2000&view=chart&year=2019</a></p>
+</div>
+
+<div class="container">
+<p>Suicide is the leading cause of death for those aged 10-29.</p>
+<p>Globally, suicide is the fourth leading cause of death for youths aged 15 to 19 (World Health Organisation).</p>
+<p>378 lives were lost to suicide in Singapore in 2021.</p>
+<p>Males accounted for 68.25% of all suicides in 2021.</p>
+<p style="margin-bottom: 60px;">For every suicide, at least 6 suicide survivors are left behind.</p>
+</div>
+
+<!-- HTML section to navigate to (discover)-->
+<section id="section">
+  <h1>What is Mental Well-being?</h1>
+
+<!-- image of singapore + source link -->
+<img class="mentalhealthpic" src="mentalhealth.jpg" style="width:500px">
+<p>Source: <a href="https://unsplash.com/photos/EDJKEXFbzHA?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">https://unsplash.com/photos/EDJKEXFbzHA?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText</a>
+
+<!-- container to left + centre align text + text to explain what is mental health + source -->
+  <div class="para-container4">
+  <p style="margin-bottom: 30px;">Mental health includes our emotional, psychological, and social well-being. It affects how we think, feel, and act. It also helps determine how we handle stress, relate to others, and make choices. Mental health is important at every stage of life, from childhood and adolescence through adulthood.
+    <a href="https://www.mentalhealth.gov/basics/what-is-mental-health">(Source)</a></p>
+  </div>
+
+  <h3>Dispelling Common Misconceptions</h3>
+  <p><b>Click</b> on each box to compare myth and fact!</p>
+  
+<!-- event listner, function for boxes to change colour and text when clicked-->
+  <div id="myBox" class="box3" onclick="changeBox()">
+  Myth 1: Mental illnesses are not real medical illnesses like heart disease and diabetes. People who have them are just &quot;crazy&quot;.
+</div>
+
+<div id="myBox2" class="box4" onclick="changeBox2()">
+  Myth 2: Stress causes mental illness.
+</div>
+
+<div id="myBox3" class="box5" onclick="changeBox3()">
+	Myth 3: People with mental illness are violent and dangerous.
+</div>
+
+<div id="myBox4" class="box6" onclick="changeBox4()">
+	Myth 4: If I have a mental illness, it is a sign of weakness, it's my fault.
+</div>
+
+<div id="myBox5" class="box7" onclick="changeBox5()">
+	Myth 5: People with mental illnesses can't be helped.
+</div>
+
+<div id="myBox6" class="box8" onclick="changeBox6()">
+	Myth 6: Mental illnesses are uncommon.
+</div>
+<p style="margin-bottom: 60px;">Source: <a href="https://www.samhealth.org.sg/understanding-mental-health/what-is-mental-illness/#:~:text=About%20one%20in%20seven%20Singaporeans,of%20their%20lives%5B1%5D">https://www.samhealth.org.sg/understanding-mental-health/what-is-mental-illness/#:~:text=About%20one%20in%20seven%20Singaporeans,of%20their%20lives%5B1%5D</a></p>
+
+</section>
+
+<!-- HTML section to navigate to (resources)-->
+  <section id="section2">
+  <h1>Seek mental health resources & services (SG)</h1>
+<!-- huge box to keep two smaller boxes and text -->
+<div class="huge-box">
+  <p style="color: black; font-size:18px;">Not sure where to seek support? Trying the tools below can help us find suitable mental health resources or tools for our needs.</p>
+<!-- left smaller text box -->
+  <div class="left-box">
+    <h3>Text-based services or helplines</h3>
+
+  <div class="container3">
+<!-- first circle icon -->
+    <div class="circle">
+        <span class="icon">1</span>
+    </div>
+      <h4 style="background-color: rgba(252,214,212,255);"></p>Samaritans of Singapore</h4>
+    </div>
+
+    <p style="margin:-5px"><a href="https://www.sos.org.sg/">24-hour chatbox function</a></p>
+    <p>24-hour hotline: 1-767</p>
+
+    <div class="container4">
+<!-- second circle icon -->
+      <div class="circle2">
+        <span class="icon2">2</span>
+      </div>
+    <h4 style="background-color: rgba(252,214,212,255);">Institute of Mental Health</h4>
+    </div>
+    <p style="margin:-5px">24-hour hotline: 6389-2222</p>
+  </div>
+
+<!-- right smaller text box -->
+  <div class="right-box">
+    <h3>Mental health services</h3>
+    <p>Mental health services are provided by General Practitioners, Polyclinics and Social Service Agencies near you.</p>
+    <p>Find the service you need here.</p>
+<!-- button, when pressed goes to a link with resources for mental health services -->
+  <a href="https://www.aic.sg/resources/Documents/Brochures/Mental%20Health/Mind%20Matters%20Resource%20Directory%20Listings.PDF" target="_blank">
+    <button class="press" type="button">List of Services</button>
+  </a>
+</div>
+</div>
+
+<!-- source link for mental health resources -->
+  <p>Source: <a href="https://www.healthhub.sg/programmes/186/MindSG/Discover#Seek_mental_health_resources_services">https://www.healthhub.sg/programmes/186/MindSG/Discover#Seek_mental_health_resources_servicess</a></p>
+</section>
+</div>
+
+</body>
 </html>
-
