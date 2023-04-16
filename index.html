@@ -2,48 +2,49 @@
 <html>
 
 <head>
-<!-- created css from scratch -->
+
     <link rel="stylesheet" type="text/css" href="css/appstyle.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script defer type="text/javascript" src="index.js"></script>
+
 </head>
 
-<!-- slider for "how are you feeling today"-->
+<!-- slider, button with function-->
 <body>
   <main>
     <section class="cd-section">
-      <h1>How are you feeling today?</h1>
-      <p>1 being feeling bad and 5 being feeling good</p>
+    <h1>How are you feeling today?</h1>
+    <p>1 being feeling bad and 5 being feeling good</p>
     <aside class="sidebar aside" id="asideID">
-<!-- submit button with popup function-->
-    <form>
-      <input type="button" id="buttonID" value="Submit" onclick="myFunction()">
-    </form>
-<!-- slider changes text when moved-->
-    <div class="range-wrap"> 
-      <input id="range" type="range" name="range" min="1" max="5" step="1">
-        <label id="display"></label>
+      <form>
+        <input type="button" id="buttonID" value="Submit" onclick="myFunction()">
+      </form>
+    
+        <div class="range-wrap"> 
+          <input id="range" type="range" name="range" min="1" max="5" step="1" >
+          <label id="display"></label>
           <p id="numVal"></p> 
-            <div id="range-bars"></div>
+          <div id="range-bars"></div>
           </div>
-      </aside>
+          </aside>
     </section>
 
-<!-- static background image -->
+<!-- static background with text boxes -->
     <section class="cd-section cd-section--bg-fixed">
-<!-- first text box within background image -->
-      <h1 style="margin-top: 80px; font-size:30px; color:firebrick">What causes one to feel more happy?</h1>
-      <p style="font-size:26px; color:firebrick">A data story about happiness</p>
-        <div class="box1">
-          <p style= "font-size:18px;">My data story centers around happiness and mental health, by looking at findings of world happiness rankings and delving deeper into Singapore's happiness (factors that affected happiness through analysis of data), and also mental health trends, what is mental health, and the resources and services that one can utilize to seek help.</p>
-        </div>
-<!-- second text box within background image -->
+
+    <h1 style="margin-top: 80px; font-size:30px; color:firebrick">What causes one to feel more happy?</h1>
+    <p style="font-size:26px; color:firebrick">A data story about happiness</p>
+    <div class="box1">
+    <p style= "font-size:18px;">My topic is on the happiness of countries worldwide, with a focus on the factors affecting one&apos;s life fulfillment (such as married vs single, quality of healthcare systems, biological influences) and this is derived by comparing the demographics of people within countries that are happier. We will also be looking at other interesting findings regarding happiness, such as the change in happiness levels over the years (indicating global events).</p>
+    </div>
+
     <h1 style="margin-top:100px; margin-bottom:0px; font-size:30px; color:firebrick">Why is learning about happiness important?</h1>
-      <div class="box2">
-        <p style= "font-size:18px;">According to <a href="https://greatergood.berkeley.edu/article/item/why_governments_should_care_more_about_happiness">Diener,</a>
+    <div class="box2">
+  <p style= "font-size:18px;">According to
+      <a href="https://greatergood.berkeley.edu/article/item/why_governments_should_care_more_about_happiness">Diener,</a>
       a professor of psychology at the University of Virginia and the University of Utah, their research suggests that happy people are more effective in achieving valued goals, contribute positively to society by helping others lead high-quality lives, and are not uncaring or selfish.</p>
-        <p style= "font-size:18px;">
-        <a href="https://news.climate.columbia.edu/2015/04/23/why-happiness-is-important/">The Columbia Climate School</a>
+  <p style= "font-size:18px;">
+      <a href="https://news.climate.columbia.edu/2015/04/23/why-happiness-is-important/">The Columbia Climate School</a>
 suggests that using data on happiness can inform policy-making and collaborative problem-solving for local and national governments, as well as track the effectiveness of interventions aimed at improving well-being and reducing inequality over time.</p>
   <p style="font-size:18px;">
     <a href="Happiness data help to assess, understand an individual's happiness and help individuals make better informed decision making about where to live (world ranking of happiness), lifestyle choices (trade offs between earning more money, having better health, and settling down in marriage) to achieve better life satisfaction.">According to the Journal of Social Change by Walden University,</a>
@@ -53,22 +54,19 @@ suggests that using data on happiness can inform policy-making and collaborative
 </section>
 </main>
 
-<!-- tab buttons, eventlistener -->
+<!-- tab links, eventlistener, button -->
 <button class="tablink" onclick="openPage('Ranking', this, 'red')">World Happiness Ranking</button>
 <button class="tablink" onclick="openPage('Singapore', this, 'red')" id="defaultOpen">Singapore's Analysis</button>
 <button class="tablink" onclick="openPage('mentalhealth', this, 'red')">Mental Health</button>
 
-<!-- description of happiness indices -->
+<!--bar chart-->
 <div id="Ranking" class="tabcontent">
-<!-- container to left + centre align text, text to explain trends in bar chart -->
   <div class="para-container2">
     <p>The <b>World Happiness Report</b> released its annual ranking of the happiest countries in the world and for the sixth year in a row Finland has landed in the top spot.</p>
     <p>The UN Sustainable Development Solutions Network, the organization behind the report, uses six key factors to help rank the more than 150 countries based on their average life evaluations between 2019-2021:</p>
     <p>(<b>Hover</b> over each key factor to view detailed information!)</p>
     <p style="font-size:18px; color:firebrick"><b>
       1. Social support
-<!-- hover over words for more words to appear using <span> -->
-<!-- &quot; to replace quotation marks to prevent breakings -->
     <span class="extra">Social support is the national average of the binary responses (0=no, 1=yes) to the Gallup World Poll (GWP) question &quot;If you were in trouble, do you have relatives or friends you can count on to help you whenever you need them, or not?&quot;</span></p>
     </b></p>
     <p style="font-size:18px; color:firebrick"><b>
@@ -93,7 +91,6 @@ suggests that using data on happiness can inform policy-making and collaborative
     </b></p>
   </div>
 
-<!--bar chart for world happiness ranking-->
 <h1>World Happiness Report 2022</h1>
     <link rel="stylesheet" type="text/css" href="css/appstyle.css">
     <script defer type="text/javascript" src="appscripts/main.js"></script>
@@ -103,10 +100,10 @@ suggests that using data on happiness can inform policy-making and collaborative
 </div>
 
 <h1>Which 5 countries were the happiest?</h1>
-<!-- container for the first image gallery -->
+<!-- container for the image gallery -->
 <div class="container">
 
-<!-- full-width images with number and description of country text -->
+  <!-- full-width images with number text -->
   <div class="mySlides">
     <div class="numbertext">1 / 5</div>
       <img src="finland.jpeg" style="width:60%">
@@ -172,20 +169,21 @@ suggests that using data on happiness can inform policy-making and collaborative
   </div>
   </div>
 
-<!-- next and previous buttons for image slideshow, using eventlistener & function -->
-  <a class="prev2" onclick="plusSlides(-1)"><span>&#10094;</span></a>
-  <a class="next2" onclick="plusSlides(1)"><span>&#10095;</span></a>
+  <!-- next and previous buttons, eventlistener, function -->
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
 
-<!-- image text -->
+  <!-- image text -->
   <div class="caption-container">
     <p id="caption"></p>
   </div>
 
-<!-- thumbnail images, event listener to change image -->
+  <!-- thumbnail images, event listener -->
   <div class="row">
     <div class="column">
       <img class="demo cursor" src="finland.jpeg" style="width:100%" onclick="currentSlide(1)" alt="Rank 1: Finland">
     </div>
+
     <div class="column">
       <img class="demo cursor" src="denmark.jpeg" style="width:100%" onclick="currentSlide(2)" alt="Rank 2: Denmark">
     </div>
@@ -234,7 +232,7 @@ suggests that using data on happiness can inform policy-making and collaborative
   <div class="mySlides2">
     <div class="numbertext2">3 / 5</div>
       <img src="zimbabwe.jpeg" style="width:60%">
-      <div class="text-block8">
+      <div class="text-block7">
         <h4>Rank 144: Zimbabwe</h4>
         <p>Zimbabwe is a landlocked country located in Southern Africa, bordered by four countries: South Africa to the south, Mozambique to the east and southeast, Botswana to the west and southwest, and Zambia to the northwest.</p>
         <p>The population of Zimbabwe is diverse, with the majority of the people being of African descent, particularly the Shona and Ndebele ethnic groups. English, Shona, and Sindebele are the official languages, and Christianity is the dominant religion, although there are also significant indigenous religious practices.</p>
@@ -266,55 +264,46 @@ suggests that using data on happiness can inform policy-making and collaborative
       <p>Botswana is a country with a relatively high standard of living compared to many other African nations, with a well-developed education and healthcare system. It has made significant progress in recent years in areas such as infrastructure development, economic diversification, and poverty reduction.</p>
   </div>
   </div>
-  
-<!-- next and previous buttons for image slideshow, using eventlistener & function -->
-  <a class="prev2" onclick="plusSlides2(-1)"><span>&#10094;</span></a>
-  <a class="next2" onclick="plusSlides2(1)"><span>&#10095;</span></a>
 </div>
 
+  <!-- Next and previous buttons -->
+  <a class="prev2" onclick="plusSlides2(-1)">&#10094;</a>
+  <a class="next2" onclick="plusSlides2(1)">&#10095;</a>
 
-<!-- image text -->
+<!-- Image text -->
 <div class="caption-container2">
   <p id="caption2"></p>
 </div>
 
-<!-- thumbnail images, event listener to change image -->
+  <!-- Thumbnail images -->
 <div class="row2">
   <div class="column2">
-  <img class="demo2 cursor2" src="afghanistan.jpeg" style="width:100%" onclick="currentSlide2(1)" alt="Rank 146: Afghanistan">
+  <img class="demo cursor2" src="afghanistan.jpeg" style="width:100%" onclick="currentSlide2(1)" alt="Rank 146: Afghanistan">
 </div>
 <div class="column2">
-  <img class="demo2 cursor2" src="lebanon.jpeg" style="width:100%" onclick="currentSlide2(2)" alt="Rank 145: Lebanon">
+  <img class="demo cursor2" src="lebanon.jpeg" style="width:100%" onclick="currentSlide2(2)" alt="Rank 145: Lebanon">
 </div>
 <div class="column2">
-  <img class="demo2 cursor2" src="zimbabwe.jpeg" style="width:100%" onclick="currentSlide2(3)" alt="Rank 144: Zimbabwe">
+  <img class="demo cursor2" src="zimbabwe.jpeg" style="width:100%" onclick="currentSlide2(3)" alt="Rank 144: Zimbabwe">
 </div>
 <div class="column2">
-  <img class="demo2 cursor2" src="rwanda.jpeg" style="width:100%" onclick="currentSlide2(4)" alt="Rank 143: Rwanda">
+  <img class="demo cursor2" src="rwanda.jpeg" style="width:100%" onclick="currentSlide2(4)" alt="Rank 143: Rwanda">
 </div>
 <div class="column2">
-  <img class="demo2 cursor2" src="botswana.jpeg" style="width:100%" onclick="currentSlide2(5)" alt="Rank 142: Botswana">
-      </div>
-    </div>
-  </div>
+  <img class="demo cursor2" src="botswana.jpeg" style="width:100%" onclick="currentSlide2(5)" alt="Rank 142: Botswana">
+</div>
+</div>
 </div>
 
-<!-- tab for singapore's analysis -->
+</div>
+
+<!-- line chart -->
 <div id="Singapore" class="tabcontent">
   <h1>Singapore based on World Happiness Reports from 2015-2022</h1>
-
-<!-- image of singapore + source link -->
-    <img class="singapore" src="singapore.jpg" style="width:600px">
-    <p style="margin-bottom:60px">Source: <a href="https://unsplash.com/photos/__cBlRzLSTg?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">https://unsplash.com/photos/__cBlRzLSTg?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText</a></p>
-
-<!-- line chart for world happiness ranking of singapore + source link for data -->
-<script src="linechart(singapore)/appscripts/main.js"></script>
-<link rel="stylesheet" type="text/css" href="css/appstyle.css">
+  <script src="linechart(singapore)/appscripts/main.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/appstyle.css">
 <canvas id="RankingChart" width="1000" height="100"></canvas>
-<p>Source: <a href="https://www.kaggle.com/datasets/mathurinache/world-happiness-report?select=2017.csv">https://www.kaggle.com/datasets/mathurinache/world-happiness-report?select=2017.csv</a></p>
-  
-<!-- container to left + centre align text, text to explain trends in line chart -->
-<div class="para-container">
+  <div class="para-container">
         <p>Singapore's world happiness ranking ranges from 22 to 34.</p>
         <p>
           Happiness rankings have worsened starting from 2017 to 2019, with
@@ -324,13 +313,14 @@ suggests that using data on happiness can inform policy-making and collaborative
           After 2019, Singapore's ranking improves and was ranked 27 last year.
         </p>
       </div>
-  
-<!-- line chart for happiness factors changes over time + source link for datas -->
       <canvas id="myChart" width="1000" height="250"></canvas>
-<!-- container to left + centre align text, text to explain trends in line chart -->
       <div class="para-container">
         <p>
-          Source:<a href="https://www.kaggle.com/datasets/mathurinache/world-happiness-report?select=2017.csv">https://www.kaggle.com/datasets/mathurinache/world-happiness-report?select=2017.csv</a>
+          Source:
+          <a
+            href="https://www.kaggle.com/datasets/mathurinache/world-happiness-report?select=2017.csv"
+            >https://www.kaggle.com/datasets/mathurinache/world-happiness-report?select=2017.csv</a
+          >
         </p>
         <p>
           There weren't much decrease in factors when rankings worsen in 2017 to
@@ -360,116 +350,45 @@ suggests that using data on happiness can inform policy-making and collaborative
 <!-- tab for mental health -->
 <div id="mentalhealth" class="tabcontent">
 
-<!-- right HTML button to navigate to trends section when pressed, function, eventlistener -->
+<!-- right HTML button -->
 <button class="trends" onclick="goToSection2()">Mental Health Trends</button>
 
-<!-- middle HTML button to navigate to discover section when pressed, function, eventlistener -->
+<!-- right HTML button -->
 <button class="discover" onclick="goToSection3()">What is Mental Well-being</button>
 
-<!-- left HTML button to navigate to resources section when pressed, function, eventlistener -->
+<!-- middle HTML button -->
 <button class="resources" onclick="goToSection()">Resources & Services</button>
 
 <!-- HTML section to navigate to (trends)-->
 <section id="section3">
   <h1>Mental Health Trends</h1>
-
-<!-- line chart for mental health searches in Singapore -->
-<canvas id="myChart2" width="1000" height="400"></canvas>
-<!-- container to left + centre align text -->
-<div class="para-container3">
-<!-- source link for data + text to explain trends in line chart -->
-<p>Source: <a href="https://trends.google.com/trends/explore?date=all&geo=SG&q=mental%20health&hl=en">https://trends.google.com/trends/explore?date=all&geo=SG&q=mental%20health&hl=en</a></p>
-<p>Numbers represent search interest relative to the highest point on the chart for the given region and time. A value of 100 is the peak popularity for the term. A value of 50 means that the term is half as popular. A score of 0 means there was not enough data for this term.</p>
-<p>Over time, there is a general trend of increased awareness and interest in mental health topics, as societal attitudes towards mental health evolve and stigma is reduced.</p>
-<p>This is reflected in a gradual increase in Google Search activity related to mental health in Singapore over time.</p>
-<p>Major events or news related to mental health, such as mental health campaigns, advocacy efforts, or high-profile cases, may result in spikes in search activity.</p>
-<p>For example, during the COVID-19 pandemic, there has been increased interest in mental health topics as people sought information and resources to cope with the challenges of the pandemic.</p>
-<p style="margin-bottom: 60px;">There have been spikes in search activity from 2020 onwards, as the COVID-19 pandemic ensues.</p>
-</div>
-
-<!-- bar chart for suicides in Singapore -->
-<canvas id="sm-bar-chart2" width="1000" height="400"></canvas>
-<div style="margin-bottom: 60px;">
-<!-- source link for data -->
-<p>Source: <a href="https://data.worldbank.org/indicator/SH.STA.SUIC.P5?end=2019&locations=SG&start=2000&view=chart&year=2019">https://data.worldbank.org/indicator/SH.STA.SUIC.P5?end=2019&locations=SG&start=2000&view=chart&year=2019</a></p>
-</div>
-
-<div class="container">
-<p>Suicide is the leading cause of death for those aged 10-29.</p>
-<p>Globally, suicide is the fourth leading cause of death for youths aged 15 to 19 (World Health Organisation).</p>
-<p>378 lives were lost to suicide in Singapore in 2021.</p>
-<p>Males accounted for 68.25% of all suicides in 2021.</p>
-<p style="margin-bottom: 60px;">For every suicide, at least 6 suicide survivors are left behind.</p>
-</div>
+</section>
 
 <!-- HTML section to navigate to (discover)-->
 <section id="section">
   <h1>What is Mental Well-being?</h1>
-
-<!-- image of singapore + source link -->
-<img class="mentalhealthpic" src="mentalhealth.jpg" style="width:500px">
-<p>Source: <a href="https://unsplash.com/photos/EDJKEXFbzHA?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">https://unsplash.com/photos/EDJKEXFbzHA?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText</a>
-
-<!-- container to left + centre align text + text to explain what is mental health + source -->
-  <div class="para-container4">
-  <p style="margin-bottom: 30px;">Mental health includes our emotional, psychological, and social well-being. It affects how we think, feel, and act. It also helps determine how we handle stress, relate to others, and make choices. Mental health is important at every stage of life, from childhood and adolescence through adulthood.
-    <a href="https://www.mentalhealth.gov/basics/what-is-mental-health">(Source)</a></p>
-  </div>
-
-  <h3>Dispelling Common Misconceptions</h3>
-  <p><b>Click</b> on each box to compare myth and fact!</p>
-  
-<!-- event listner, function for boxes to change colour and text when clicked-->
-  <div id="myBox" class="box3" onclick="changeBox()">
-  Myth 1: Mental illnesses are not real medical illnesses like heart disease and diabetes. People who have them are just &quot;crazy&quot;.
-</div>
-
-<div id="myBox2" class="box4" onclick="changeBox2()">
-  Myth 2: Stress causes mental illness.
-</div>
-
-<div id="myBox3" class="box5" onclick="changeBox3()">
-	Myth 3: People with mental illness are violent and dangerous.
-</div>
-
-<div id="myBox4" class="box6" onclick="changeBox4()">
-	Myth 4: If I have a mental illness, it is a sign of weakness, it's my fault.
-</div>
-
-<div id="myBox5" class="box7" onclick="changeBox5()">
-	Myth 5: People with mental illnesses can't be helped.
-</div>
-
-<div id="myBox6" class="box8" onclick="changeBox6()">
-	Myth 6: Mental illnesses are uncommon.
-</div>
-<p style="margin-bottom: 60px;">Source: <a href="https://www.samhealth.org.sg/understanding-mental-health/what-is-mental-illness/#:~:text=About%20one%20in%20seven%20Singaporeans,of%20their%20lives%5B1%5D">https://www.samhealth.org.sg/understanding-mental-health/what-is-mental-illness/#:~:text=About%20one%20in%20seven%20Singaporeans,of%20their%20lives%5B1%5D</a></p>
-
 </section>
 
 <!-- HTML section to navigate to (resources)-->
   <section id="section2">
   <h1>Seek mental health resources & services (SG)</h1>
-<!-- huge box to keep two smaller boxes and text -->
 <div class="huge-box">
   <p style="color: black; font-size:18px;">Not sure where to seek support? Trying the tools below can help us find suitable mental health resources or tools for our needs.</p>
-<!-- left smaller text box -->
+
   <div class="left-box">
     <h3>Text-based services or helplines</h3>
-
-  <div class="container3">
-<!-- first circle icon -->
-    <div class="circle">
+    
+    <div class="container2">
+      <div class="circle">
         <span class="icon">1</span>
-    </div>
+      </div>
       <h4 style="background-color: rgba(252,214,212,255);"></p>Samaritans of Singapore</h4>
     </div>
 
     <p style="margin:-5px"><a href="https://www.sos.org.sg/">24-hour chatbox function</a></p>
     <p>24-hour hotline: 1-767</p>
 
-    <div class="container4">
-<!-- second circle icon -->
+    <div class="container3">
       <div class="circle2">
         <span class="icon2">2</span>
       </div>
@@ -478,20 +397,19 @@ suggests that using data on happiness can inform policy-making and collaborative
     <p style="margin:-5px">24-hour hotline: 6389-2222</p>
   </div>
 
-<!-- right smaller text box -->
   <div class="right-box">
     <h3>Mental health services</h3>
-    <p>Mental health services are provided by General Practitioners, Polyclinics and Social Service Agencies near you.</p>
-    <p>Find the service you need here.</p>
-<!-- button, when pressed goes to a link with resources for mental health services -->
-  <a href="https://www.aic.sg/resources/Documents/Brochures/Mental%20Health/Mind%20Matters%20Resource%20Directory%20Listings.PDF" target="_blank">
-    <button class="press" type="button">List of Services</button>
-  </a>
-</div>
+  </div>
+
 </div>
 
-<!-- source link for mental health resources -->
-  <p>Source: <a href="https://www.healthhub.sg/programmes/186/MindSG/Discover#Seek_mental_health_resources_services">https://www.healthhub.sg/programmes/186/MindSG/Discover#Seek_mental_health_resources_servicess</a></p>
+  <p>
+    Source:
+    <a
+      href="https://www.healthhub.sg/programmes/186/MindSG/Discover#Seek_mental_health_resources_services"
+      >https://www.healthhub.sg/programmes/186/MindSG/Discover#Seek_mental_health_resources_servicess</a
+    >
+  </p>
 </section>
 </div>
 
