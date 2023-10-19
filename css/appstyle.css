@@ -1,7 +1,7 @@
 html, body {
   height:100%;
   width:100%;
-  background-color: #111;
+  background-color: rgb(141, 193, 224);
 }
 
 /* Sections of Layout
@@ -15,7 +15,7 @@ html, body {
 }
 
 .container > * {
-  background-color: #ccc;
+  background-color: rgb(216, 228, 253);
   padding: 1em;
 }
 
@@ -33,7 +33,6 @@ html, body {
 
 /* Now let's apply grid for wider viewports. */
 @media screen and (min-width: 40em) {
-
   .container > * {
     margin-bottom: 0;
   }
@@ -56,21 +55,6 @@ html, body {
     grid-column: 2;
   }
 
-  table { 
-    font-family: arial, sans-serif;
-    border-collapse: collapse;
-    border-spacing: 30px;
-    width: 100%;
-  }
-  
-  td, th {
-    border: 1px solid #000000;
-    text-align: left;
-    padding: 5px;
-  }
-  
-  tr {
-    background-color: #dddddd;
-
-  }
 }
+
+
